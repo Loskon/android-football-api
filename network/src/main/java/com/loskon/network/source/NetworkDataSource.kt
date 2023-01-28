@@ -15,10 +15,10 @@ class NetworkDataSource(
         toDate: String
     ): Flow<List<MatchDto>> {
         return flow {
-            val response = allSportsApi.getMatches(apyKey, fromDate, toDate)
+            val response = allSportsApi.getFixtures(apyKey, fromDate, toDate)
 
             if (response.isSuccessful) {
-                emit(response.body() ?: emptyList())
+                emit(response.body()?.matches ?: emptyList())
             } else {
                 emit(emptyList())
             }

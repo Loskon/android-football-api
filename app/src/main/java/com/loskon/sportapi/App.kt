@@ -1,8 +1,8 @@
 package com.loskon.sportapi
 
 import android.app.Application
-import androidx.viewbinding.BuildConfig
 import com.loskon.network.networkModule
+import com.loskon.sportapi.matchlist.matchListModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import timber.log.Timber
@@ -18,7 +18,7 @@ class App : Application() {
     private fun initializeKoin(application: Application) {
         startKoin {
             androidContext(application)
-            modules(listOf(networkModule))
+            modules(listOf(networkModule, matchListModule))
         }
     }
 }

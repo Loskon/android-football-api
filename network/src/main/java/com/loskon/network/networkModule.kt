@@ -1,12 +1,9 @@
 package com.loskon.network
 
-import com.loskon.network.BuildConfig.BASE_URL
 import com.loskon.network.api.AllSportsApi
 import com.loskon.network.source.NetworkDataSource
-import com.squareup.moshi.Moshi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import org.koin.android.BuildConfig
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -14,7 +11,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 val networkModule = module {
     single { provideLoggingInterceptor() }
     single { provideOkHttp(get()) }
-    single { provideRetrofit(get(), get()) }
+    single { provideRetrofit(get()) }
     single { provideAllSportsApi(get()) }
 
     single { NetworkDataSource(get()) }
@@ -30,11 +27,11 @@ private fun provideOkHttp(logging: HttpLoggingInterceptor): OkHttpClient {
     }.build()
 }
 
-private fun provideRetrofit(okHttp: OkHttpClient, moshi: Moshi): Retrofit {
+private fun provideRetrofit(okHttp: OkHttpClient): Retrofit {
     return Retrofit.Builder()
         .client(okHttp)
-        .baseUrl(BASE_URL)
-        .addConverterFactory(MoshiConverterFactory.create(moshi))
+        .baseUrl(BuildConfig.BASE_URL)
+        .addConverterFactory(MoshiConverterFactory.create())
         .build()
 }
 

@@ -6,127 +6,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView3"
+    <include
+        android:id="@+id/inc_match_card"
+        layout="@layout/item_match_card"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="@dimen/margin_small"
-        android:text="@string/home_team"
-        android:textColor="@android:color/black"
-        android:textSize="@dimen/text_medium"
-        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tv_add_info"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCardView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_xsmall"
-        android:layout_marginEnd="@dimen/margin_xsmall"
-        app:cardCornerRadius="@dimen/margin_xsmall"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/margin_small"
-            android:layout_marginVertical="@dimen/margin_small"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                app:srcCompat="@drawable/placeholder" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_small"
-                android:layout_marginBottom="@dimen/margin_small"
-                android:gravity="center"
-                android:textColor="@android:color/black"
-                android:textSize="@dimen/text_medium"
-                android:textStyle="bold"
-                tools:text="Bechem United" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/button"
-                style="@style/ButtonFlatStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Button" />
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="@dimen/margin_small"
-        android:text="@string/away_team"
-        android:textColor="@android:color/black"
-        android:textSize="@dimen/text_medium"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialCardView" />
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCardView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_xsmall"
-        android:layout_marginEnd="@dimen/margin_xsmall"
-        app:cardCornerRadius="@dimen/margin_xsmall"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/margin_small"
-            android:layout_marginVertical="@dimen/margin_small"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/imageView22"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                app:srcCompat="@drawable/placeholder" />
-
-            <TextView
-                android:id="@+id/textView22"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_small"
-                android:layout_marginBottom="@dimen/margin_small"
-                android:gravity="center"
-                android:textColor="@android:color/black"
-                android:textSize="@dimen/text_medium"
-                android:textStyle="bold"
-                tools:text="Bechem United" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/button2"
-                style="@style/ButtonFlatStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Button" />
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
         android:id="@+id/tv_add_info"
@@ -134,19 +24,22 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="@dimen/margin_small"
-        android:text="Add"
-        android:textColor="@android:color/black"
+        android:text="@string/additional_info"
         android:textSize="@dimen/text_medium"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/cv_match_info"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialCardView2" />
+        app:layout_constraintTop_toBottomOf="@+id/inc_match_card" />
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_match_info"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/bottom_bar_match_info"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_add_info">
 
@@ -157,6 +50,85 @@
             android:layout_marginVertical="@dimen/margin_small"
             android:orientation="vertical">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_small"
+                android:text="@string/date"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/margin_small"
+                tools:text="2023-02-12" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_small"
+                android:text="@string/league_name"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_league_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/margin_small"
+                tools:text="Premier League" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_small"
+                android:text="@string/league_round"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_league_round"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/margin_small"
+                tools:text="Round 17" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_small"
+                android:text="@string/country_name"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_country_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/margin_small"
+                tools:text="Ghana" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_small"
+                android:text="@string/stadium"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_stadium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/margin_small"
+                tools:text="Bechem Park (Bechem)" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 

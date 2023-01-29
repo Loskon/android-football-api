@@ -46,6 +46,7 @@ dependencies {
     coreLibraryDesugaring deps.desugar
     // Android
     implementation deps.appcompat
+    implementation deps.material
     implementation deps.bundles.lifecycle
     // Kotlin
     implementation deps.core

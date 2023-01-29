@@ -6,22 +6,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv"
-        android:layout_width="0dp"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/sw_match_list"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@android:color/transparent"
-        android:scrollbarStyle="outsideOverlay"
-        android:scrollbars="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/bottomAppBar"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_bar_match_list"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/item_match_card" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_match_list"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@android:color/transparent"
+            android:scrollbarStyle="outsideOverlay"
+            android:scrollbars="vertical"
+            tools:listitem="@layout/item_match_card" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/indicator_match_list"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_bar_match_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:trackColor="@android:color/transparent"
+        app:trackThickness="2dp" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
-        android:id="@+id/bottomAppBar"
+        android:id="@+id/bottom_bar_match_list"
         android:layout_width="0dp"
         android:layout_height="@dimen/bottom_bar_height"
         android:layout_gravity="bottom"

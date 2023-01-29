@@ -1,12 +1,11 @@
 <resources>
     <string name="app_name">Football matches</string>
-    <string name="home_team">Домашняя команда</string>
-    <string name="away_team">Гостевая команда</string>
+    <string name="welcome">Добро пожаловать!</string>
     <string name="additional_info">Дополнительная информация</string>
     <string name="date">Дата</string>
     <string name="league_name">Название лиги</string>
     <string name="league_round">Раунд лиги</string>
     <string name="country_name">Страна</string>
     <string name="stadium">Стадион</string>
-
+    <string name="error_loading">Произошла ошибка при загрузке</string>
 </resources>

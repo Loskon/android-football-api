@@ -12,20 +12,24 @@ class MatchListViewModel(
     private val matchListInteractor: MatchListInteractor
 ) : BaseViewModel() {
 
-    private val matchListState = MutableStateFlow<List<MatchModel>>(emptyList())
+    private val matchListState = MutableStateFlow<MatchListState>(MatchListState.Loading)
     val getMatchListState get() = matchListState.asStateFlow()
 
     private var job: Job? = null
 
     fun getMatchList(fromDate: String, toDate: String) {
         job?.cancel()
-        job = launchErrorJob(errorBlock = { disableLoading() }) {
-            matchListInteractor.getMatchesAsFlow(fromDate, toDate).collectLatest { matchListState.emit(it) }
+        job = launchErrorJob(
+            errorBlock = { matchListState.tryEmit(MatchListState.Failure) }
+        ) {
+            matchListState.tryEmit(MatchListState.Loading)
+            matchListInteractor.getMatchesAsFlow(fromDate, toDate).collectLatest {
+                matchListState.emit(MatchListState.Success(it))
+            }
         }
     }
 
-    private fun disableLoading() {}
     fun setMatches(matches: List<MatchModel>) {
-        matchListState.tryEmit(matches)
+        matchListState.tryEmit(MatchListState.Success(matches))
     }
 }

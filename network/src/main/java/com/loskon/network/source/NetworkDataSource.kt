@@ -17,7 +17,7 @@ class NetworkDataSource(
             val response = allSportsApi.getFixtures(fromDate = fromDate, toDate = toDate)
 
             if (response.isSuccessful) {
-                emit(response.body()?.matches ?: emptyList())
+                emit(response.body()?.matches?.reversed() ?: emptyList())
             } else {
                 emit(emptyList())
             }

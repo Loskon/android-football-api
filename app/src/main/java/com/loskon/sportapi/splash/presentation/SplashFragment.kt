@@ -28,7 +28,7 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
         viewModel.getMatchListState.observe(this) {
             when (it) {
                 is SplashState.Success -> findNavController().navigate(SplashFragmentDirections.openMatchList(it.matches.toTypedArray()))
-                is SplashState.Error -> findNavController().navigate(SplashFragmentDirections.openMatchList(null))
+                is SplashState.Failure -> findNavController().navigate(SplashFragmentDirections.openMatchList(null))
                 null -> {}
             }
         }

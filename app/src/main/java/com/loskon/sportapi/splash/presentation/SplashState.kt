@@ -4,5 +4,5 @@ import com.loskon.sportapi.model.MatchModel
 
 sealed class SplashState {
     class Success(val matches: List<MatchModel>) : SplashState()
-    object Error : SplashState()
+    object Failure : SplashState()
 }

@@ -2,11 +2,13 @@ package com.loskon.sportapi.matchlist.presentation
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.SimpleItemAnimator
+import com.google.android.material.snackbar.Snackbar
 import com.loskon.base.datetime.toFormatString
 import com.loskon.base.viewbinding.viewBinding
 import com.loskon.cryptocoins.base.extension.coroutines.observe
@@ -30,14 +32,18 @@ class MatchListFragment : Fragment(R.layout.fragment_match_list) {
             val matches = args.matches
 
             if (matches == null) {
-                val fromDate = LocalDateTime.now().toFormatString()
-                val toDate = LocalDateTime.now().plusDays(RANGE_DAYS).toFormatString()
-
-                viewModel.getMatchList(fromDate, toDate)
+                getMatchesList()
             } else {
                 viewModel.setMatches(matches.toList())
             }
         }
+    }
+
+    private fun getMatchesList() {
+        val fromDate = LocalDateTime.now().toFormatString()
+        val toDate = LocalDateTime.now().plusDays(RANGE_DAYS).toFormatString()
+
+        viewModel.getMatchList(fromDate, toDate)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -45,14 +51,11 @@ class MatchListFragment : Fragment(R.layout.fragment_match_list) {
 
         configureRecyclerView()
         installObserver()
-
-        matchListAdapter.setOnItemClickListener { match ->
-            findNavController().navigate(MatchListFragmentDirections.openMatchInfoList(match))
-        }
+        setupViewListeners()
     }
 
     private fun configureRecyclerView() {
-        with(binding.rv) {
+        with(binding.rvMatchList) {
             (itemAnimator as? SimpleItemAnimator)?.supportsChangeAnimations = false
             layoutManager = LinearLayoutManager(requireContext())
             adapter = matchListAdapter
@@ -62,7 +65,38 @@ class MatchListFragment : Fragment(R.layout.fragment_match_list) {
 
     private fun installObserver() {
         viewModel.getMatchListState.observe(viewLifecycleOwner) {
-            matchListAdapter.setItems(it)
+            when (it) {
+                is MatchListState.Loading -> {
+                    binding.indicatorMatchList.isVisible = true
+                }
+                is MatchListState.Success -> {
+                    binding.indicatorMatchList.isVisible = false
+                    matchListAdapter.setItems(it.matches)
+                }
+                is MatchListState.Failure -> {
+                    binding.indicatorMatchList.isVisible = false
+                    showWarningSnackbar()
+                }
+            }
+        }
+    }
+
+    private fun showWarningSnackbar() {
+        Snackbar.make(binding.root, getString(R.string.error_loading), Snackbar.LENGTH_LONG)
+            .setAnchorView(binding.bottomBarMatchList)
+            .show()
+    }
+
+    private fun setupViewListeners() {
+        binding.swMatchList.setOnRefreshListener {
+            binding.swMatchList.isRefreshing = false
+            getMatchesList()
+        }
+        matchListAdapter.setOnItemClickListener { match ->
+            findNavController().navigate(MatchListFragmentDirections.openMatchInfoList(match))
+        }
+        binding.bottomBarMatchList.setNavigationOnClickListener {
+
         }
     }
 

@@ -15,12 +15,9 @@ class SplashViewModel(
 
     fun getMatchList(fromDate: String, toDate: String) {
         launchErrorJob(
-            errorBlock = { matchListState.tryEmit(SplashState.Error) }
+            errorBlock = { matchListState.tryEmit(SplashState.Failure) }
         ) {
-            matchListInteractor.getMatchesAsFlow(
-                fromDate,
-                toDate
-            ).collectLatest {
+            matchListInteractor.getMatchesAsFlow(fromDate, toDate).collectLatest {
                 matchListState.emit(SplashState.Success(it))
             }
         }

@@ -13,7 +13,7 @@ import com.loskon.sportapi.databinding.FragmentMatchInfo2Binding
 import com.loskon.sportapi.utils.ImageLoader
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MatchInfoFragment : Fragment(R.layout.fragment_match_info2) {
+class MatchInfoFragment : Fragment(R.layout.fragment_match_info) {
 
     private val binding by viewBinding(FragmentMatchInfo2Binding::bind)
     private val viewModel by viewModel<MatchInfoViewModel>()
@@ -30,7 +30,7 @@ class MatchInfoFragment : Fragment(R.layout.fragment_match_info2) {
 
         binding.incMatchCard.tvMatchCardDate.isVisible = false
         installObserver()
-        setupViewsListeners()
+        setupViewListener()
     }
 
     private fun installObserver() {
@@ -49,7 +49,7 @@ class MatchInfoFragment : Fragment(R.layout.fragment_match_info2) {
         }
     }
 
-    private fun setupViewsListeners() {
+    private fun setupViewListener() {
         binding.bottomBarMatchInfo.setNavigationOnClickListener {
             findNavController().popBackStack()
         }

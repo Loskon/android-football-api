@@ -60,6 +60,7 @@ dependencies {
     implementation deps.recyclerview
     implementation deps.activity
     implementation deps.fragment
+    implementation deps.swiperefreshlayout
     implementation deps.bundles.navigation
     implementation deps.bundles.lifecycle
     // Kotlin

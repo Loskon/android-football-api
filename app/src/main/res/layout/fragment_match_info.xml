@@ -11,6 +11,8 @@
         layout="@layout/item_match_card"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_xsmall"
+        android:layout_marginEnd="@dimen/margin_xsmall"
         app:layout_constraintBottom_toTopOf="@+id/tv_add_info"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -37,7 +39,9 @@
         android:id="@+id/cv_match_info"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_bar_match_info"
+        android:layout_marginStart="@dimen/margin_xsmall"
+        android:layout_marginEnd="@dimen/margin_xsmall"
+        app:layout_constraintBottom_toTopOf="@+id/btn_away"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -131,6 +135,34 @@
                 tools:text="Bechem Park (Bechem)" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_home"
+        style="@style/ButtonFlatStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_small"
+        android:text="@string/home"
+        app:icon="@drawable/ic_group_24px"
+        app:iconGravity="textStart"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_bar_match_info"
+        app:layout_constraintEnd_toStartOf="@+id/btn_away"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_away"
+        style="@style/ButtonFlatStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_small"
+        android:text="@string/away"
+        app:icon="@drawable/ic_group_24px"
+        app:iconGravity="textStart"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_bar_match_info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_home" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottom_bar_match_info"

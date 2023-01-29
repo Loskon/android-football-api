@@ -17,7 +17,7 @@ open class BaseViewModel : ViewModel() {
     open val errorStateFlow get() = errorMutableStateFlow.asStateFlow()
 
     protected fun launchErrorJob(
-        dispatcher: CoroutineDispatcher = Dispatchers.Default,
+        dispatcher: CoroutineDispatcher = Dispatchers.IO,
         error: MutableStateFlow<Throwable?>? = errorMutableStateFlow,
         errorBlock: ((Throwable) -> Unit)? = null,
         block: suspend () -> Unit

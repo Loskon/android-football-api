@@ -38,11 +38,23 @@
         <argument
             android:name="match"
             app:argType="com.loskon.sportapi.model.MatchModel" />
+        <action
+            android:id="@+id/openPlayerListFragment"
+            app:destination="@id/playerListFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/webFragment"
         android:name="com.loskon.sportapi.web.WebFragment"
         android:label="WebFragment" />
+
+    <fragment
+        android:id="@+id/playerListFragment"
+        android:name="com.loskon.sportapi.playerlist.presentation.PlayerListFragment"
+        android:label="PlayerListFragment" >
+        <argument
+            android:name="team"
+            app:argType="string" />
+    </fragment>
 
 </navigation>

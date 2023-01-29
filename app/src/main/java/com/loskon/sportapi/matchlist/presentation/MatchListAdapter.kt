@@ -23,10 +23,10 @@ class MatchListAdapter : RecyclerView.Adapter<MatchListAdapter.MatchListViewHold
     }
 
     override fun onBindViewHolder(holder: MatchListViewHolder, position: Int) {
-        val coin = list[position]
+        val item = list[position]
 
         with(holder.binding) {
-            coin.apply {
+            item.apply {
                 ImageLoader.load(ivMatchCardHome, homeTeamLogo)
                 ImageLoader.load(ivMatchCardAway, awayTeamLogo)
                 tvMatchCardHomeName.text = eventHomeTeam

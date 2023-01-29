@@ -6,6 +6,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.loskon.base.extension.view.setDebounceClickListener
 import com.loskon.base.viewbinding.viewBinding
 import com.loskon.cryptocoins.base.extension.coroutines.observe
 import com.loskon.sportapi.R
@@ -50,6 +51,12 @@ class MatchInfoFragment : Fragment(R.layout.fragment_match_info) {
     }
 
     private fun setupViewListener() {
+        binding.btnHome.setDebounceClickListener {
+            findNavController().navigate(MatchInfoFragmentDirections.openPlayerListFragment(args.match.eventHomeTeam))
+        }
+        binding.btnAway.setDebounceClickListener {
+            findNavController().navigate(MatchInfoFragmentDirections.openPlayerListFragment(args.match.eventAwayTeam))
+        }
         binding.bottomBarMatchInfo.setNavigationOnClickListener {
             findNavController().popBackStack()
         }

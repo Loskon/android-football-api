@@ -4,13 +4,13 @@ import android.app.Application
 import com.loskon.network.networkModule
 import com.loskon.sportapi.matchinfo.matchInfoModule
 import com.loskon.sportapi.matchlist.matchListModule
+import com.loskon.sportapi.playerlist.playerListModule
 import com.loskon.sportapi.splash.splashModule
 import com.onesignal.OneSignal
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import timber.log.Timber
 
-const val ONESIGNAL_APP_ID = "d8a6da42-ad9f-43e3-b775-0c6854aa2591"
 class App : Application() {
 
     override fun onCreate() {
@@ -29,7 +29,11 @@ class App : Application() {
     private fun initializeKoin(application: Application) {
         startKoin {
             androidContext(application)
-            modules(listOf(networkModule, splashModule, matchListModule, matchInfoModule))
+            modules(listOf(networkModule, splashModule, matchListModule, matchInfoModule, playerListModule))
         }
+    }
+
+    companion object {
+        private const val ONESIGNAL_APP_ID = "d8a6da42-ad9f-43e3-b775-0c6854aa2591"
     }
 }

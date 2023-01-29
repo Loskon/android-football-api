@@ -8,4 +8,12 @@
     <string name="country_name">Страна</string>
     <string name="stadium">Стадион</string>
     <string name="error_loading">Произошла ошибка при загрузке</string>
+    <string name="home">Дом</string>
+    <string name="away">Гости</string>
+    <string name="player_number">Player number: %1$s</string>
+    <string name="player_type">Player type: %1$s</string>
+    <string name="player_age">Player age: %1$s</string>
+    <string name="player_match_played">Player match played: %1$s</string>
+    <string name="player_goals">Player goals: %1$s</string>
+    <string name="player_list_unknown">Список команды неизвестен</string>
 </resources>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cv_user"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/margin_xsmall"
+    android:layout_marginEnd="@dimen/margin_xsmall"
+    app:cardCornerRadius="@dimen/margin_xsmall"
+    app:cardUseCompatPadding="true"
+    app:rippleColor="?attr/colorControlHighlight">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cst_player_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/margin_xmedium"
+        android:paddingVertical="@dimen/margin_xmedium">
+
+        <TextView
+            android:id="@+id/tv_player_card_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_medium"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/tv_player_card_number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TextContrastCheck"
+            tools:text="E. Adu" />
+
+        <TextView
+            android:id="@+id/tv_player_card_number"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:textSize="@dimen/text_small"
+            app:layout_constraintBottom_toTopOf="@+id/tv_player_card_type"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="TextContrastCheck"
+            tools:text="Player number: 23" />
+
+        <TextView
+            android:id="@+id/tv_player_card_type"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:textSize="@dimen/text_small"
+            app:layout_constraintBottom_toTopOf="@+id/tv_player_card_age"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="TextContrastCheck"
+            tools:text="Player type: Goalkeepers" />
+
+        <TextView
+            android:id="@+id/tv_player_card_age"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:textSize="@dimen/text_small"
+            app:layout_constraintBottom_toTopOf="@+id/tv_player_card_match_played"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.333"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="TextContrastCheck"
+            tools:text="Player age: 33" />
+
+        <TextView
+            android:id="@+id/tv_player_card_match_played"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:textSize="@dimen/text_small"
+            app:layout_constraintBottom_toTopOf="@+id/tv_player_card_goals"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.666"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="TextContrastCheck"
+            tools:text="Player match played: 14" />
+
+        <TextView
+            android:id="@+id/tv_player_card_goals"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:textSize="@dimen/text_small"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.666"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="TextContrastCheck"
+            tools:text="Player goals: 0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

@@ -2,16 +2,16 @@ package com.loskon.sportapi.model
 
 import com.loskon.network.dto.PlayerDto
 
-data class PlayerModel (
-    val playerKey: Long= 0L,
-    val playerName: String= "",
-    val playerNumber: String= "",
-    val playerType: String= "",
-    val playerAge: String= "",
-    val playerMatchPlayed: String= "",
-    val playerGoals: String= "",
-    val playerYellowCards: String= "",
-    val playerRedCards: String= ""
+data class PlayerModel(
+    val playerKey: Long = 0L,
+    val playerName: String = "",
+    val playerNumber: String = "",
+    val playerType: String = "",
+    val playerAge: String = "",
+    val playerMatchPlayed: String = "",
+    val playerGoals: String = "",
+    val playerYellowCards: String = "",
+    val playerRedCards: String = ""
 )
 
 fun PlayerDto.toPlayerModel(): PlayerModel {

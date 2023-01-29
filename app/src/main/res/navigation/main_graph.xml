@@ -5,7 +5,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.loskon.sportapi.splash.presentation.SplashFragment"
+        android:name="com.loskon.sportapi.screens.splash.presentation.SplashFragment"
         android:label="SplashScreenFragment">
         <action
             android:id="@+id/openMatchList"
@@ -16,7 +16,7 @@
 
     <fragment
         android:id="@+id/matchListFragment"
-        android:name="com.loskon.sportapi.matchlist.presentation.MatchListFragment"
+        android:name="com.loskon.sportapi.screens.matchlist.presentation.MatchListFragment"
         android:label="MatchListFragment">
         <argument
             android:name="matches"
@@ -25,33 +25,45 @@
             app:nullable="true" />
         <action
             android:id="@+id/openMatchInfoList"
-            app:destination="@id/matchInfoFragment" />
+            app:destination="@id/matchInfoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
         <action
             android:id="@+id/openWebFragment"
-            app:destination="@id/webFragment" />
+            app:destination="@id/webFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
     <fragment
         android:id="@+id/matchInfoFragment"
-        android:name="com.loskon.sportapi.matchinfo.presentation.MatchInfoFragment"
+        android:name="com.loskon.sportapi.screens.matchinfo.presentation.MatchInfoFragment"
         android:label="MatchInfoFragment">
         <argument
             android:name="match"
             app:argType="com.loskon.sportapi.model.MatchModel" />
         <action
             android:id="@+id/openPlayerListFragment"
-            app:destination="@id/playerListFragment" />
+            app:destination="@id/playerListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
     <fragment
         android:id="@+id/webFragment"
-        android:name="com.loskon.sportapi.web.WebFragment"
+        android:name="com.loskon.sportapi.screens.web.WebFragment"
         android:label="WebFragment" />
 
     <fragment
         android:id="@+id/playerListFragment"
-        android:name="com.loskon.sportapi.playerlist.presentation.PlayerListFragment"
-        android:label="PlayerListFragment" >
+        android:name="com.loskon.sportapi.screens.playerlist.presentation.PlayerListFragment"
+        android:label="PlayerListFragment">
         <argument
             android:name="team"
             app:argType="string" />

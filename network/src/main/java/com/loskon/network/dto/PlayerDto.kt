@@ -22,7 +22,7 @@ data class TeamInfoDto(
 )
 
 @JsonClass(generateAdapter = true)
-data class PlayerDto (
+data class PlayerDto(
     @Json(name = "player_key")
     val playerKey: Long? = null,
 

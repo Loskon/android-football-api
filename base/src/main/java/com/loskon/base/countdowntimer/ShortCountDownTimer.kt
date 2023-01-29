@@ -7,7 +7,7 @@ open class ShortCountDownTimer(
     val onFinishTimer: () -> Unit
 ) : CountDownTimer(millis, millis) {
 
+    @Suppress("EmptyFunctionBlock")
     override fun onTick(p0: Long) {}
-
     override fun onFinish() = onFinishTimer()
 }

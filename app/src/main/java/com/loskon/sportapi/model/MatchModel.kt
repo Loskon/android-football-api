@@ -28,6 +28,7 @@ data class MatchModel(
     val stageName: String = ""
 ) : Parcelable
 
+@Suppress("ComplexMethod")
 fun MatchDto.toMatchModel(): MatchModel {
     return MatchModel(
         eventKey = eventKey ?: 0L,

@@ -29,7 +29,7 @@ swiperefreshlayout = "1.1.0"
 activity = "1.6.1"
 fragment = "1.5.5"
 preference = "1.2.0"
-lifecycle = "2.5.0"
+lifecycle = "2.5.1"
 navigation = "2.5.3"
 parcelize = "1.4.30"
 ## Network
@@ -47,7 +47,7 @@ koin = "3.3.2"
 timber = "5.0.1"
 ## Test
 junit4 = "4.13.2"
-mockito = "5.0.0"
+mockito = "5.1.0"
 extJunit = "1.1.5"
 espresso = "3.5.1"
 ## Misc

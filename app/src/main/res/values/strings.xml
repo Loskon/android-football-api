@@ -8,8 +8,8 @@
     <string name="country_name">Страна</string>
     <string name="stadium">Стадион</string>
     <string name="error_loading">Произошла ошибка при загрузке</string>
-    <string name="home">Дом</string>
-    <string name="away">Гости</string>
+    <string name="home">Домашняя команда</string>
+    <string name="away">Гостевая команда</string>
     <string name="player_number">Player number: %1$s</string>
     <string name="player_type">Player type: %1$s</string>
     <string name="player_age">Player age: %1$s</string>

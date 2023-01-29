@@ -32,14 +32,14 @@ class MatchListFragment : Fragment(R.layout.fragment_match_list) {
             val matches = args.matches
 
             if (matches == null) {
-                getMatchesList()
+                getMatchList()
             } else {
                 viewModel.setMatches(matches.toList())
             }
         }
     }
 
-    private fun getMatchesList() {
+    private fun getMatchList() {
         val fromDate = LocalDateTime.now().toFormatString()
         val toDate = LocalDateTime.now().plusDays(RANGE_DAYS).toFormatString()
 
@@ -90,13 +90,13 @@ class MatchListFragment : Fragment(R.layout.fragment_match_list) {
     private fun setupViewListeners() {
         binding.swMatchList.setOnRefreshListener {
             binding.swMatchList.isRefreshing = false
-            getMatchesList()
+            getMatchList()
         }
         matchListAdapter.setOnItemClickListener { match ->
             findNavController().navigate(MatchListFragmentDirections.openMatchInfoList(match))
         }
         binding.bottomBarMatchList.setNavigationOnClickListener {
-
+            findNavController().navigate(MatchListFragmentDirections.openWebFragment())
         }
     }
 

@@ -9,13 +9,13 @@ import androidx.navigation.fragment.navArgs
 import com.loskon.base.viewbinding.viewBinding
 import com.loskon.cryptocoins.base.extension.coroutines.observe
 import com.loskon.sportapi.R
-import com.loskon.sportapi.databinding.FragmentMatchInfo2Binding
+import com.loskon.sportapi.databinding.FragmentMatchInfoBinding
 import com.loskon.sportapi.utils.ImageLoader
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MatchInfoFragment : Fragment(R.layout.fragment_match_info) {
 
-    private val binding by viewBinding(FragmentMatchInfo2Binding::bind)
+    private val binding by viewBinding(FragmentMatchInfoBinding::bind)
     private val viewModel by viewModel<MatchInfoViewModel>()
     private val args by navArgs<MatchInfoFragmentArgs>()
 

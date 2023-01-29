@@ -69,6 +69,8 @@ dependencies {
     implementation deps.koin
     // ImageLoader
     implementation deps.coil
+    // OneSignal
+    implementation 'com.onesignal:OneSignal:[4.0.0, 4.99.99]'
     // Logs
     implementation deps.timber
     // Test

@@ -26,6 +26,9 @@
         <action
             android:id="@+id/openMatchInfoList"
             app:destination="@id/matchInfoFragment" />
+        <action
+            android:id="@+id/openWebFragment"
+            app:destination="@id/webFragment" />
     </fragment>
 
     <fragment
@@ -36,5 +39,10 @@
             android:name="match"
             app:argType="com.loskon.sportapi.model.MatchModel" />
     </fragment>
+
+    <fragment
+        android:id="@+id/webFragment"
+        android:name="com.loskon.sportapi.web.WebFragment"
+        android:label="WebFragment" />
 
 </navigation>

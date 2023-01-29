@@ -1,15 +1,15 @@
-package com.loskon.sportapi.matchlist.domain
+package com.loskon.sportapi.splash.domain
 
 import com.loskon.sportapi.model.MatchModel
 import kotlinx.coroutines.flow.Flow
 
-class MatchListInteractor(
-    private val matchListRepository: MatchListRepository
+class SplashInteractor(
+    private val splashRepository: SplashRepository
 ) {
     suspend fun getMatchesAsFlow(
         fromDate: String,
         toDate: String
     ): Flow<List<MatchModel>> {
-        return matchListRepository.getMatchesAsFlow(fromDate, toDate)
+        return splashRepository.getMatchesAsFlow(fromDate, toDate)
     }
 }

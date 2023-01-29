@@ -1,15 +1,15 @@
-package com.loskon.sportapi.matchlist.data
+package com.loskon.sportapi.splash.data
 
 import com.loskon.network.source.NetworkDataSource
-import com.loskon.sportapi.matchlist.domain.MatchListRepository
 import com.loskon.sportapi.model.MatchModel
 import com.loskon.sportapi.model.toMatchModel
+import com.loskon.sportapi.splash.domain.SplashRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-class MatchListRepositoryImpl(
+class SplashRepositoryImpl(
     private val networkDataSource: NetworkDataSource
-) : MatchListRepository {
+) : SplashRepository {
 
     override suspend fun getMatchesAsFlow(
         fromDate: String,

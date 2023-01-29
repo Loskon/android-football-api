@@ -31,6 +31,7 @@ class MatchListAdapter : RecyclerView.Adapter<MatchListAdapter.MatchListViewHold
                 ImageLoader.load(ivMatchCardAway, awayTeamLogo)
                 tvHome.text = eventHomeTeam
                 tvAway.text = eventAwayTeam
+                textView.text = eventDate
                 root.setDebounceClickListener { onItemClick?.invoke(this) }
             }
         }

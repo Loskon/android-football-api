@@ -16,8 +16,8 @@
         android:id="@+id/cst_match_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="@dimen/margin_xmedium"
-        android:paddingVertical="@dimen/margin_xmedium">
+        android:layout_marginHorizontal="@dimen/margin_xsmall"
+        android:layout_marginVertical="@dimen/margin_xsmall">
 
         <ImageView
             android:id="@+id/iv_match_card_home"
@@ -42,33 +42,57 @@
         <TextView
             android:id="@+id/tv_home"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_xmedium"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/margin_xsmall"
             android:ellipsize="end"
-            android:gravity="start"
+            android:gravity="center"
+            android:minLines="2"
+            android:textColor="@android:color/black"
             android:textSize="@dimen/text_medium"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/tv_away"
-            app:layout_constraintEnd_toStartOf="@+id/iv_match_card_away"
-            app:layout_constraintStart_toEndOf="@id/iv_match_card_home"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintEnd_toStartOf="@+id/tv_away"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@+id/iv_match_card_home"
+            app:layout_constraintTop_toTopOf="@+id/iv_match_card_home"
             tools:ignore="TextContrastCheck"
-            tools:text="login" />
+            tools:text="Bechem United" />
 
         <TextView
             android:id="@+id/tv_away"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginStart="@dimen/margin_xmedium"
+            android:layout_marginStart="@dimen/margin_xsmall"
+            android:layout_marginEnd="@dimen/margin_xsmall"
             android:ellipsize="end"
-            android:gravity="start"
+            android:gravity="center"
+            android:minLines="2"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_medium"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintEnd_toStartOf="@+id/iv_match_card_away"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_home"
+            app:layout_constraintTop_toTopOf="@+id/iv_match_card_away"
+            tools:ignore="TextContrastCheck"
+            tools:text="Aduana Stars" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@android:color/darker_gray"
             android:textSize="@dimen/text_small"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/iv_match_card_away"
-            app:layout_constraintStart_toEndOf="@id/iv_match_card_home"
-            app:layout_constraintTop_toBottomOf="@+id/tv_home"
+            app:layout_constraintStart_toEndOf="@+id/iv_match_card_home"
+            app:layout_constraintTop_toBottomOf="@+id/iv_match_card_home"
             tools:ignore="TextContrastCheck"
-            tools:text="id" />
+            tools:text="2023-02-12" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

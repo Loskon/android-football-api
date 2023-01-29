@@ -1,7 +1,10 @@
 package com.loskon.sportapi.model
 
+import android.os.Parcelable
 import com.loskon.network.dto.MatchDto
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class MatchModel(
     val eventKey: Long = 0L,
     val eventDate: String = "",
@@ -23,7 +26,7 @@ data class MatchModel(
     val countryLogo: String = "",
     val fkStageKey: Long = 0L,
     val stageName: String = ""
-)
+) : Parcelable
 
 fun MatchDto.toMatchModel(): MatchModel {
     return MatchModel(

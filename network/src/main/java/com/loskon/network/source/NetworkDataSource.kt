@@ -10,12 +10,11 @@ class NetworkDataSource(
 ) {
 
     suspend fun getMatchesAsFlow(
-        apyKey: String,
         fromDate: String,
         toDate: String
     ): Flow<List<MatchDto>> {
         return flow {
-            val response = allSportsApi.getFixtures(apyKey, fromDate, toDate)
+            val response = allSportsApi.getFixtures(fromDate = fromDate, toDate = toDate)
 
             if (response.isSuccessful) {
                 emit(response.body()?.matches ?: emptyList())

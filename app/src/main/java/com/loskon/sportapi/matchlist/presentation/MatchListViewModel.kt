@@ -1,7 +1,6 @@
 package com.loskon.sportapi.matchlist.presentation
 
 import com.loskon.base.presentation.viewmodel.BaseViewModel
-import com.loskon.network.BuildConfig.API_KEY
 import com.loskon.sportapi.matchlist.domain.MatchListInteractor
 import com.loskon.sportapi.model.MatchModel
 import kotlinx.coroutines.Job
@@ -18,12 +17,15 @@ class MatchListViewModel(
 
     private var job: Job? = null
 
-    fun getMatchList() {
+    fun getMatchList(fromDate: String, toDate: String) {
         job?.cancel()
         job = launchErrorJob(errorBlock = { disableLoading() }) {
-            matchListInteractor.getMatchesAsFlow(API_KEY, "2023-01-28", "2023-02-12").collectLatest {  matchListState.emit(it) }
+            matchListInteractor.getMatchesAsFlow(fromDate, toDate).collectLatest { matchListState.emit(it) }
         }
     }
 
     private fun disableLoading() {}
+    fun setMatches(matches: List<MatchModel>) {
+        matchListState.tryEmit(matches)
+    }
 }

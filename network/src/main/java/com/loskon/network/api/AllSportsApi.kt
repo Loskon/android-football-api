@@ -1,5 +1,6 @@
 package com.loskon.network.api
 
+import com.loskon.network.BuildConfig
 import com.loskon.network.dto.FixtureDto
 import retrofit2.Response
 import retrofit2.http.GET
@@ -9,7 +10,7 @@ interface AllSportsApi {
 
     @GET("football/?met=Fixtures")
     suspend fun getFixtures(
-        @Query("APIkey") apyKey: String,
+        @Query("APIkey") apyKey: String = BuildConfig.API_KEY,
         @Query("from") fromDate: String,
         @Query("to") toDate: String
     ): Response<FixtureDto>

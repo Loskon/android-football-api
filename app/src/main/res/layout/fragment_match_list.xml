@@ -23,11 +23,11 @@
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/bottom_bar_height"
         android:layout_gravity="bottom"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:navigationIcon="@drawable/ic_language_40px"
+        app:navigationIcon="@drawable/ic_browser_24px"
         tools:ignore="BottomAppBar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

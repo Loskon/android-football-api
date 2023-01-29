@@ -23,6 +23,18 @@
             android:defaultValue="@null"
             app:argType="com.loskon.sportapi.model.MatchModel[]"
             app:nullable="true" />
+        <action
+            android:id="@+id/openMatchInfoList"
+            app:destination="@id/matchInfoFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/matchInfoFragment"
+        android:name="com.loskon.sportapi.matchinfo.presentation.MatchInfoFragment"
+        android:label="MatchInfoFragment">
+        <argument
+            android:name="match"
+            app:argType="com.loskon.sportapi.model.MatchModel" />
     </fragment>
 
 </navigation>

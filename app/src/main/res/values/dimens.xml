@@ -17,4 +17,6 @@
     <dimen name="text_medium">16sp</dimen>
     <dimen name="text_large">20sp</dimen>
     <dimen name="text_higher">24sp</dimen>
+    <!-- Special -->
+    <dimen name="bottom_bar_height">48dp</dimen>
 </resources>

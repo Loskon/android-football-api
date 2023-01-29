@@ -2,8 +2,8 @@ package com.loskon.sportapi.matchlist.presentation
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.SimpleItemAnimator
@@ -47,7 +47,7 @@ class MatchListFragment : Fragment(R.layout.fragment_match_list) {
         installObserver()
 
         matchListAdapter.setOnItemClickListener { match ->
-            Toast.makeText(requireContext(), "Hi", Toast.LENGTH_LONG).show()
+            findNavController().navigate(MatchListFragmentDirections.openMatchInfoList(match))
         }
     }
 

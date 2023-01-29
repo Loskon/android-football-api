@@ -29,9 +29,9 @@ class MatchListAdapter : RecyclerView.Adapter<MatchListAdapter.MatchListViewHold
             coin.apply {
                 ImageLoader.load(ivMatchCardHome, homeTeamLogo)
                 ImageLoader.load(ivMatchCardAway, awayTeamLogo)
-                tvHome.text = eventHomeTeam
-                tvAway.text = eventAwayTeam
-                textView.text = eventDate
+                tvMatchCardHomeName.text = eventHomeTeam
+                tvMatchCardAwayName.text = eventAwayTeam
+                tvMatchCardDate.text = eventDate
                 root.setDebounceClickListener { onItemClick?.invoke(this) }
             }
         }

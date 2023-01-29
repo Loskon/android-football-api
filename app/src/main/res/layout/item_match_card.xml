@@ -40,7 +40,7 @@
             tools:ignore="ContentDescription,ImageContrastCheck" />
 
         <TextView
-            android:id="@+id/tv_home"
+            android:id="@+id/tv_match_card_home_name"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="@dimen/margin_xsmall"
@@ -50,8 +50,8 @@
             android:textColor="@android:color/black"
             android:textSize="@dimen/text_medium"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/textView"
-            app:layout_constraintEnd_toStartOf="@+id/tv_away"
+            app:layout_constraintBottom_toTopOf="@+id/tv_match_card_date"
+            app:layout_constraintEnd_toStartOf="@+id/tv_match_card_away_name"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toEndOf="@+id/iv_match_card_home"
@@ -60,7 +60,7 @@
             tools:text="Bechem United" />
 
         <TextView
-            android:id="@+id/tv_away"
+            android:id="@+id/tv_match_card_away_name"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="@dimen/margin_xsmall"
@@ -71,16 +71,16 @@
             android:textColor="@android:color/black"
             android:textSize="@dimen/text_medium"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintBottom_toTopOf="@+id/tv_match_card_date"
             app:layout_constraintEnd_toStartOf="@+id/iv_match_card_away"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/tv_home"
+            app:layout_constraintStart_toEndOf="@+id/tv_match_card_home_name"
             app:layout_constraintTop_toTopOf="@+id/iv_match_card_away"
             tools:ignore="TextContrastCheck"
             tools:text="Aduana Stars" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/tv_match_card_date"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center"
